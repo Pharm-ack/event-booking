@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { TicketFormData } from "@/types";
 
 export function TicketSelection() {
   const { formData, updateFormData } = useForm();
@@ -51,9 +52,14 @@ export function TicketSelection() {
                 {TICKET_TYPES.map((ticket) => (
                   <button
                     key={ticket.id}
-                    onClick={() => updateFormData({ ticketType: ticket.id })}
+                    onClick={() =>
+                      updateFormData({
+                        ticketType: (ticket.id.charAt(0).toUpperCase() +
+                          ticket.id.slice(1)) as TicketFormData["ticketType"],
+                      })
+                    }
                     className={`p-4 border ${
-                      formData.ticketType === ticket.id
+                      formData.ticketType === ticket.id.toUpperCase()
                         ? "border-[#197686] bg-[#12464E]"
                         : "border-[#24A0B5] hover:border-teal-500/50"
                     } text-left transition-colors text-[#FAFAFA] rounded-[12px] h-[110px]`}

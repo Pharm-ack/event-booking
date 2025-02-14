@@ -13,7 +13,7 @@ const FormContext = createContext<FormContextType | undefined>(undefined);
 
 const initialFormData: TicketFormData = {
   step: 1,
-  ticketType: "free",
+  ticketType: "Free",
   quantity: 1,
   fullName: "",
   email: "",
