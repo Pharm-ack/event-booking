@@ -2,11 +2,19 @@
 
 import { useForm } from "@/contexts/form-context";
 import { Button } from "@/components/ui/button";
+import { generatePDF } from "@/lib/generatePDF";
 
 export function TicketConfirmation() {
   const { formData, resetForm } = useForm();
 
-  const handleDownload = () => {};
+  const handleDownload = async () => {
+    try {
+      const pdf = await generatePDF(formData);
+      pdf.save(`${formData.fullName.replace(/\s+/g, "_")}_Ticket.pdf`);
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+    }
+  };
 
   return (
     <div className="w-[700px] p-12 mx-auto h-full bg-[#041E23] border border-[#0E464F] rounded-[40px]">
@@ -357,7 +365,6 @@ export function TicketConfirmation() {
             y="0"
           />
         </defs>
-        {/*  */}
         <svg
           x="11%"
           y="85%"
