@@ -14,7 +14,6 @@ export const generatePDF = async (ticketData: TicketFormData) => {
   pdf.rect(0, 0, 210, 297, "F");
 
   // Main ticket container
-  const margin = 20;
   const width = 170;
   const height = 220;
   const x = (210 - width) / 2;
