@@ -17,7 +17,7 @@ export function TicketConfirmation() {
   };
 
   return (
-    <div className="w-[700px] p-12 mx-auto h-full bg-[#041E23] border border-[#0E464F] rounded-[40px]">
+    <div className="w-[700px] p-6 mx-auto h-full bg-[#041E23] border border-[#0E464F] rounded-[40px]">
       <div className="mb-1 w-full flex justify-between items-center">
         <h1 className="text-3xl font-serif text-white">Ready</h1>
         <span className="text-gray-400 text-sm">Step 3/3</span>

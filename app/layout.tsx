@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={inter.className}>
         <FormProvider>
-          <div className="main-container h-full w-full pt-6 ">
+          <div className="main-container h-full w-full pt-6">
             <NavBar />
             <main className="container mx-auto px-4 py-8">{children}</main>
           </div>
